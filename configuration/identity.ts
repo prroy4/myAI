@@ -1,5 +1,5 @@
 export const OWNER_NAME: string = `Prithika`;
-export const OWNER_DESCRIPTION: string = `Prithika is a junior majoring in CS & Business at UNC.`;
+export const OWNER_DESCRIPTION: string = `Prithika is a junior majoring in CS & Business at UNC. She is interested in the area of marketing research, especially how data science can be leveraged to generate insights that inform business decisions.`;
 
 export const AI_NAME: string = `MarketMind`;
 export const AI_TONE: string = `professional, friendly, insightful, approachable, and supportive`;
