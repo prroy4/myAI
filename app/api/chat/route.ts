@@ -52,6 +52,7 @@ async function determineIntention(chat: Chat): Promise<Intention> {
   });
 }
 
+
 export async function POST(req: Request) {
   const { chat } = await req.json();
 
@@ -61,6 +62,8 @@ export async function POST(req: Request) {
     return ResponseModule.respondToQuestion(chat, providers, pineconeIndex);
   } else if (intention.type === "hostile_message") {
     return ResponseModule.respondToHostileMessage(chat, providers);
+  } else if (intention.type === "question_refinement") { // Add this block
+    return ResponseModule.respondToQuestionRefinement(chat, providers);
   } else {
     return ResponseModule.respondToRandomMessage(chat, providers);
   }
