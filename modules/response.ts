@@ -16,6 +16,7 @@ import {
   getContextFromSources,
   getCitationsFromChunks,
   buildPromptFromContext,
+  stripMessagesOfCitations,
 } from "@/utilities/chat";
 import {
   queueAssistantResponse,
@@ -26,7 +27,6 @@ import {
   HISTORY_CONTEXT_LENGTH,
   DEFAULT_RESPONSE_MESSAGE,
 } from "@/configuration/chat";
-import { stripMessagesOfCitations } from "@/utilities/chat";
 import {
   RESPOND_TO_HOSTILE_MESSAGE_SYSTEM_PROMPT,
   RESPOND_TO_QUESTION_BACKUP_SYSTEM_PROMPT,
@@ -34,10 +34,10 @@ import {
   RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT,
   IDENTITY_STATEMENT,
   OWNER_STATEMENT,
-  OWNER_DESCRIPTION,
   AI_ROLE,
   AI_TONE,
 } from "@/configuration/prompts";
+import { OWNER_DESCRIPTION } from "@/configuration/identity";
 import {
   RANDOM_RESPONSE_PROVIDER,
   RANDOM_RESPONSE_MODEL,
