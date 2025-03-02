@@ -34,10 +34,11 @@ import {
   RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT,
   IDENTITY_STATEMENT,
   OWNER_STATEMENT,
-  AI_ROLE,
-  AI_TONE,
 } from "@/configuration/prompts";
-import { OWNER_DESCRIPTION } from "@/configuration/identity";
+import { OWNER_DESCRIPTION,
+        AI_ROLE,
+        AI_TONE,
+} from "@/configuration/identity";
 import {
   RANDOM_RESPONSE_PROVIDER,
   RANDOM_RESPONSE_MODEL,
