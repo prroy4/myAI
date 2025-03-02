@@ -228,55 +228,55 @@ export class ResponseModule {
       },
     });
   }
-}
 
-static async respondToQuestionRefinement(
-  chat: Chat,
-  providers: AIProviders
-): Promise<Response> {
-  const PROVIDER_NAME: ProviderName = QUESTION_RESPONSE_PROVIDER;
-  const MODEL_NAME: string = QUESTION_RESPONSE_MODEL;
+  static async respondToQuestionRefinement(
+    chat: Chat,
+    providers: AIProviders
+  ): Promise<Response> {
+    const PROVIDER_NAME: ProviderName = QUESTION_RESPONSE_PROVIDER;
+    const MODEL_NAME: string = QUESTION_RESPONSE_MODEL;
 
-  const stream = new ReadableStream({
-    async start(controller) {
-      queueIndicator({
-        controller,
-        status: "Analyzing your question",
-        icon: "thinking",
-      });
+    const stream = new ReadableStream({
+      async start(controller) {
+        queueIndicator({
+          controller,
+          status: "Analyzing your question",
+          icon: "thinking",
+        });
 
-      const systemPrompt = `
+        const systemPrompt = `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
 You are responsible for refining research questions to ensure they are clear and unbiased. If a question is leading or unclear, suggest a better version.
 
 Respond with the following tone: ${AI_TONE}
-      `;
+        `;
 
-      const mostRecentMessages: CoreMessage[] = await convertToCoreMessages(
-        stripMessagesOfCitations(chat.messages.slice(-HISTORY_CONTEXT_LENGTH))
-      );
+        const mostRecentMessages: CoreMessage[] = await convertToCoreMessages(
+          stripMessagesOfCitations(chat.messages.slice(-HISTORY_CONTEXT_LENGTH))
+        );
 
-      const citations: Citation[] = [];
-      queueAssistantResponse({
-        controller,
-        providers,
-        providerName: PROVIDER_NAME,
-        messages: mostRecentMessages,
-        model_name: MODEL_NAME,
-        systemPrompt,
-        citations,
-        error_message: DEFAULT_RESPONSE_MESSAGE,
-        temperature: QUESTION_RESPONSE_TEMPERATURE,
-      });
-    },
-  });
+        const citations: Citation[] = [];
+        queueAssistantResponse({
+          controller,
+          providers,
+          providerName: PROVIDER_NAME,
+          messages: mostRecentMessages,
+          model_name: MODEL_NAME,
+          systemPrompt,
+          citations,
+          error_message: DEFAULT_RESPONSE_MESSAGE,
+          temperature: QUESTION_RESPONSE_TEMPERATURE,
+        });
+      },
+    });
 
-  return new Response(stream, {
-    headers: {
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache",
-      Connection: "keep-alive",
-    },
-  });
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+      },
+    });
+  }
 }
