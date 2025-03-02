@@ -253,7 +253,7 @@ export class ResponseModule {
         const systemPrompt = `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-You are responsible for refining research questions to ensure they are clear and unbiased. If a question is leading or unclear, suggest a better version.
+You are responsible for refining questions that users may include in qualitative or quantitative methods to ensure they are clear, unbiased, and objective. If a question is leading or unclear, suggest a better version based off the knowledge you have. Specifically point out why the original question was unfair or flawed.
 
 Respond with the following tone: ${AI_TONE}
         `;
