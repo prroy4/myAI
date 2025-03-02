@@ -285,7 +285,6 @@ Respond with the following tone: ${AI_TONE}
       },
     });
   }
-}
 
   static async respondToQuestionRefinement(
     chat: Chat,
