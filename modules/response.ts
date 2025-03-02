@@ -253,7 +253,7 @@ export class ResponseModule {
         const systemPrompt = `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
-You are responsible for simulating focus group responses based on market research trends. Generate realistic consumer responses to the user's questions.
+You are responsible for simulating focus group responses based on market research trends. Generate realistic consumer responses to the user's questions based on industry, demographic/social, psychographics, economic, cultural, etc. specific-knowledge that you possess. 
 
 Respond with the following tone: ${AI_TONE}
         `;
