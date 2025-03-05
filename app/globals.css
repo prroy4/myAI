@@ -4,7 +4,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #E0F7FA;
+}
+
+@layer base {
+  .font-rozha-one {
+    font-family: 'Rozha One', serif;
+  }
 }
 
 @layer utilities {
