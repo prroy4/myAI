@@ -65,7 +65,7 @@ export default function Terms() {
             You acknowledge that any data transmitted to or through the Chatbot is not secured and may be processed by third parties. Do not upload, share, or transmit any sensitive, confidential, or personal information. All conversations conducted through the Chatbot are considered equivalent to public postings, and Prithika does not guarantee the confidentiality or security of any data shared.
           </li>
           <li className="text-gray-700">
-            <span className="font-semibold">Indemnification:</span> UYou agree to indemnify, defend, and hold harmless Prithika from any claims, liabilities, damages, losses, and expenses, including reasonable legal fees, arising from your use of the Chatbot or violation of these Terms of Use.
+            <span className="font-semibold">Indemnification:</span> You agree to indemnify, defend, and hold harmless Prithika from any claims, liabilities, damages, losses, and expenses, including reasonable legal fees, arising from your use of the Chatbot or violation of these Terms of Use.
           </li>
           <li className="text-gray-700">
             <span className="font-semibold">Modifications to Terms:</span> Prithika
