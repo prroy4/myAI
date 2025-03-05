@@ -5,6 +5,9 @@ import "./globals.css";
 import { ErrorWrapper } from "./parts/error/error-wrapper";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
+// Add the Google Font link
+const rozhaOneFontLink = "https://fonts.googleapis.com/css2?family=Rozha+One&display=swap";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -29,9 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href={rozhaOneFontLink} />
+      </head>
       <TooltipProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased light-blue-bg`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ErrorWrapper>{children}</ErrorWrapper>
         </body>
