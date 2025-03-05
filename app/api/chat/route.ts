@@ -64,7 +64,7 @@ export async function POST(req: Request) {
     return ResponseModule.respondToHostileMessage(chat, providers);
   } else if (intention.type === "question_refinement") {
     return ResponseModule.respondToQuestionRefinement(chat, providers);
-  } else if (intention.type === "focus_group_simulation") { // Add this block
+  } else if (intention.type === "focus_group_simulation") { 
     return ResponseModule.respondToFocusGroupSimulation(chat, providers);
   } else {
     return ResponseModule.respondToRandomMessage(chat, providers);
