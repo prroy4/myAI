@@ -13,7 +13,7 @@ export const intentionTypeSchema = z.enum([
   "random",
   "question",
   "question_refinement",
-  "focus_group_simulation", // Add this line
+  "focus_group_simulation",
 ]);
 export type IntentionType = z.infer<typeof intentionTypeSchema>;
 
