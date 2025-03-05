@@ -19,8 +19,8 @@ export default function Chat() {
   return (
     <>
       <ChatHeader clearMessages={clearMessages} />
-      <div className="flex justify-center items-center h-screen light-blue-bg">
-        <div className="flex flex-col max-w-screen-lg w-full h-full p-5 light-blue-bg">
+      <div className="flex justify-center items-center min-h-screen light-blue-bg">
+        <div className="flex flex-col max-w-screen-lg w-full h-full flex-1 p-5 light-blue-bg">
           <ChatMessages messages={messages} indicatorState={indicatorState} />
         </div>
       </div>
