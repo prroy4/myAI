@@ -50,7 +50,7 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-            lightBlue: '#ADD8E6',
+            lightBlue: '#E0F7FA',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
