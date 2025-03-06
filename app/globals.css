@@ -10,6 +10,9 @@ body {
   .font-rozha-one {
     font-family: 'Rozha One', serif;
   }
+  .light-blue-bg {
+    background-color: #E0F7FA;
+  }
 }
 
 @layer utilities {
@@ -80,8 +83,5 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-  }
-  .light-blue-bg {
-    @apply bg-lightBlue;
   }
 }
